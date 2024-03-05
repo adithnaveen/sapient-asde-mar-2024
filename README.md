@@ -69,3 +69,61 @@
 
 
 
+
+
+---- 
+
+## workflows 
+
+- there is problem statement which PS has it on insurance 
+    - Understnad the need Groming 
+    - Insurance problem statement 
+    - Given - Pre Condition  
+    - When - Actuals work 
+    - Then - Post condition 
+    - And - Multiple clause 
+    - But - exception 
+
+    - type of users 
+        - Customer 
+        - Agents 
+        - Admin 
+        - Employees 
+    
+    - what systems are you building 
+        - login 
+        - registration 
+        - issue of insurance 
+        - insurance claim 
+        .... 
+
+    -User stories 
+```
+    AC : new customer registration 
+    Given the application is running on the cli mode 
+    When the application shows the options 
+        1. Register new user 
+        2. login to the system 
+        3. exit 
+    When the user selects option 1 
+    Then accept email, password, confirm password, dob, city state, etc 
+    When the details are validate like password should have 1 special char 
+    And email should have @ symbol 
+    And dob should be 18 years or old 
+    And city should be in india 
+    Then store the record in database 
+    And show message "Your registration successful"  
+```
+- techno functional document
+    - OOAD
+        - context diagram 
+        - Use Case 
+        - sequence diagram 
+        - class diagram 
+        .... 
+        
+- write java program 
+    - you should know right tools to use 
+        - VS Code, java 17, intellij Community edition, maven, jenkins 
+
+
