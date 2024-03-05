@@ -115,15 +115,98 @@
     And show message "Your registration successful"  
 ```
 - techno functional document
+- UML - Unified Modeling Language 
     - OOAD
         - context diagram 
-        - Use Case 
+        - Use Case - draw.io, visio, some UI drawing tool, plantuml 
         - sequence diagram 
-        - class diagram 
+        - class diagram (optional) - static state diagram 
         .... 
         
 - write java program 
     - you should know right tools to use 
         - VS Code, java 17, intellij Community edition, maven, jenkins 
+
+
+- WORM - Write Once Read Many 
+- Introduction to XML 
+
+```
+    <emps> 
+        <emp>
+            <empid>101</empid>
+            <empname>Naveen</empname>
+            <age>40</age>
+        <emp>
+
+        <emp>
+            <empid>101</empid>
+            <empname>Naveen</empname>
+            <age>40</age>
+        <emp>
+    </emps>
+```
+
+- junit dependency 
+- the pom.xml file - project object model file holds all the information needed for the dependencies 
+- CLI - you need manual installation - to be used in deployment system 
+- IDE - Eclipse, IntelliJ, VS Code, Sublime etc...  - mostly installed or it comes as extenstion 
+```
+<dependencies>
+
+<dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter-api</artifactId>
+    <version>5.10.1</version>
+    <scope>test</scope>
+</dependency>
+
+<dependency>
+    <groupId>org.junit.jupiter1</groupId>
+    <artifactId>junit-jupiter-api1</artifactId>
+    <version>5.10.11</version>
+    <scope>test1</scope>
+</dependency>
+
+</dependencies>
+```
+
+
+
+## working with Maven 
+
+- Install java and set java home + path variable 
+- download maven - https://dlcdn.apache.org/maven/maven-3/3.9.6/binaries/apache-maven-3.9.6-bin.zip
+- set path for maven - /Volumes/Kanchan/Softwares/maven/maven-3.8 - M2_HOME 
+- setting path %M2_HOME%\bin
+
+
+
+## creating maven cli project 
+
+
+> mvn archetype:generate 
+
+> mvn install 
+
+>java -cp ./target/sample-maven-works-1.0-SNAPSHOT.jar com.sapient.App 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
