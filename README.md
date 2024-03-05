@@ -192,7 +192,7 @@
 >java -cp ./target/sample-maven-works-1.0-SNAPSHOT.jar com.sapient.App 
 
 
-
+-- setup you maven application  with SLF4J 
  
 
 
