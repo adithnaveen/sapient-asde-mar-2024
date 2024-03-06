@@ -197,14 +197,65 @@
 
 
 
+<br>
+
+# Day 2 
+
+
+```
+<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 -->
+<dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-log4j12</artifactId>
+    <version>1.7.30</version>
+    <scope>test</scope> -- what if i need conditionally ? 
+</dependency>
+
+
+
+--- 
+
+
+sourceCompatibility = [1.8, 9, 10, 17]
+targetCompatibility = 1.8
+```
+
+
+## cd / ci 
+
+    - continues development 
+    - continues integration 
+
+
+> java -jar jenkins.war --httpPort=9090
 
 
 
 
+- sample Jenkinsfile
+```
 
-
-
-
+pipeline {
+    agent any 
+    stages {
+        stage('Build') { 
+            steps {
+                echo "In the build process" 
+            }
+        }
+        stage('Test') { 
+            steps {
+                echo "In the build test" 
+            }
+        }
+        stage('Deploy') { 
+            steps {
+                echo "In the build deploy" 
+            }
+        }
+    }
+}
+```
 
 
 
