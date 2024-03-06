@@ -259,5 +259,95 @@ pipeline {
 
 
 
+# working with mongodb 
+
+- Structured - Normalized 
+- Unstructured - Unnormalized 
+- Json structure 
+- CAP Theorem 
+- How put the data and get the data 
+
+
+- db vs dbms 
+
+### sample data model 
+```
+- mohit 
+
+{
+    name: "mohit", 
+    city: "Bengaluru", 
+    state: "karnataka", 
+    accountNo : 12345, 
+    accountBalance : 332211, 
+    accountBranch : "MG Road"
+}
+
+- Gaurav 
+
+{
+    id: 101, 
+    name: {
+        first:"Gaurav", 
+        last:"Kumar"
+    }, 
+    address: {
+        houseNo: 1243, 
+        street: "some Blvd" , 
+        city: "Mysuru", 
+        state: "Karnataka"
+
+    }, 
+    insurance : {
+        familyMembers: {
+            member1:{
+                relation:"father", 
+                name:"Father Name", 
+                age: 44,
+                address:  {
+
+                }, 
+                member2:{
+                    relation:"father", 
+                    name:"Father Name", 
+                    age: 44,
+                    address:  {
+                        
+                    }
+            }
+            }
+        }
+    }
+}
+
+```
+
+
+## working with mongodb 
+
+>  mongod --dbpath . (to start mongodb) -- dont close the terminal 
+
+>  mongod --dbpath . --port 27018 
+
+> mongo  (by default looks for 27017 port number )
+
+-- to insert a document  
+> db.emps.insert({empid:101, empname:"siddharth", empsal:12345});
+
+> db.emps.insert({empid:102, empname:"Shalin", empsal:22334});
+
+> db.emps.insert({empid:103, empname:"paras", empsal:10000});
+
+> db.emps.insert({empid:104, empname:"rajat", empsal:20000});
+
+> db.emps.insert({empid:105, empname:"krishan", address: {street:"Cubbon Park", city:"Bengaluru"}});
+
+
+-- to see document 
+> db.emps.find(); 
+
+> show collections; 
+
+> db.createCollection("mycoll")
 
 
