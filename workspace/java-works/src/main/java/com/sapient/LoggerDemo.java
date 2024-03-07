@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 public class LoggerDemo {
 
     private static final Logger logger = LoggerFactory.getLogger(LoggerDemo.class);
+
     public static void main(String[] args) {
         logger.info("Hello from info ... ");
         logger.debug("Hello from debug... ");
@@ -13,7 +14,6 @@ public class LoggerDemo {
 
         String name = "Training ASDE Batch Blr ";
         logger.info("value substitution {}", name);
-
 
     }
 }

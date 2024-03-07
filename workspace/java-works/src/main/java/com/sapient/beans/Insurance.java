@@ -8,7 +8,7 @@ public class Insurance {
     private String insuranceName;
     private String insuranceTitle;
     private int insuranceDuration;
-    // etc ...
+    // etc ... 
 
     @Override
     public String toString() {
