@@ -51,7 +51,7 @@ And the application shows the options
 
 
 
-User Stroy : Apply for Insurance 
+User Stroy : Customer Apply for Insurance 
 --------------------------------------
 AC1: Customer buys an insurance (valid case )
 
@@ -267,7 +267,7 @@ And option to be shown
 
 
 
-AC2 : Employee loing disabled
+AC2 : Employee login disabled
 
 Given the application is running on the cli mode 
 When the application shows the options 
@@ -287,9 +287,93 @@ Then message to be shown "sorry please connect with admin for the activation"
 
 User Stroy : Employee policy view 
 --------------------------------------
+AC1: Employee view policy (valid Case)
+
+Given the application is running on the cli mode 
+And the employe logs in successfully 
+When the employee enter valid policy number which customer has bought 
+Then the policy details are shown likd 
+    policy id, policy title, tenure, policy code, policy plan, short details, frequency of payment, date of policy issued, date of closure, premium paid etc 
+
+
 
 
 User Stroy : Employee updated policy 
 --------------------------------------
 
+AC1: Update premium amount 
+Given the application is running on the cli mode 
+And the employe logs in successfully 
+When the employee enter valid policy number which customer has bought 
+Then the application shall show policy details 
+And do you want to update 
+    1. Premium amount 
+    2. Policy pre-closure 
+    3. Policy Hand Over 
+When option 1 is selected 
+Then the application shall ask for Enter new amount which you would like to pay 
+When the entered amount is +ve value 
+Then the application shall update the amount for the corresponding policy  
 
+AC2: Update Policy pre-closure 
+Given the application is running on the cli mode 
+And the employe logs in successfully 
+When the employee enter valid policy number which customer has bought 
+Then the application shall show policy details 
+And do you want to update 
+    1. Premium amount 
+    2. Policy pre-closure 
+    3. Policy Hand Over 
+When option 2 is selected 
+Then the application shall ask for Enter the date you want to close 
+When the entered date is today or in future 
+Then the application shall update the date for the corresponding policy
+And the status of the policy to be updated as pre-closure date 
+
+AC1: Update Policy Hand Over
+Given the application is running on the cli mode 
+And the employe logs in successfully 
+When the employee enter valid policy number which customer has bought 
+Then the application shall show policy details 
+And do you want to update 
+    1. Premium amount 
+    2. Policy pre-closure 
+    3. Policy Hand Over 
+When option 3 is selected 
+Then show policy details 
+And the application shall ask for confirmation "Are you sure you want to close the policy"
+When the employee enters Yes / Y 
+Then policy shall be hand over and message to be displayed "Policy will be closed soon" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Pod1 : 
+
+1. customer registration  
+2. Customer Login  
+3. Customer Apply for Insurance 
+4. Pay insurance premium 
+5. Customer Update Profile 
+6. Admin Login 
+7. Admin Create Insurance 
+8. Create Employee 
+9. Disable Employee
+10. Employee Login 
+11. Employee policy view 
+12. Employee updated policy 

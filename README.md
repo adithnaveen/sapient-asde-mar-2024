@@ -512,7 +512,14 @@ pipeline {
 
 
 ## for CPS 
-
+- will tak what user stories 
+    - pod 1 - Adarsh 
+    - pod 2 - Dhananjay 
+    - pod 3 - Sri Hari 
+    - pod 4 - Vishal 
+    - pod 5 - Achalla 
+    - pod 6 - Dhanuj 
+    
 - Sequence Diagram 
 - Usecase Diagram 
 - setup java project, create necessary packages, exception, beans, etc 
