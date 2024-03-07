@@ -351,3 +351,165 @@ pipeline {
 > db.createCollection("mycoll")
 
 
+
+
+# Day 3 
+
+- continuing mongodb 
+
+- find - with condition (where clause)
+
+```
+    - syntax 
+    > db.emps.find({selection}, {projection}); 
+
+
+    > db.emps.find({empsal:{$gt: 10000}}); 
+```
+- multiple condition and / or 
+
+```
+-- sal > 10000 & city bengaluru 
+    > db.emps.find({empsal:{$gt:10000}, city:{$eq:'Bengaluru'}})
+
+
+
+-- sal > 10000 or city bengaluru 
+    > db.emps.find({$or:[
+                {
+                    empsal:{$gt:10000}
+                }, 
+                {
+                    city:{$eq:'Bengaluru'}
+                }
+            ]
+        }
+    );
+
+
+
+```
+
+
+
+- sorting and limit 
+```
+    - 1 is ascending , -1 is descending, and you can give multiple sorts 
+
+    - in ascending 
+    > db.emps.find({empsal:{$gt: 10000}}).sort({empsal:1})
+
+
+    - in descending  
+    > db.emps.find({empsal:{$gt: 10000}}).sort({empsal:-1})
+
+    - in descending  and to check if empsal exists 
+    > db.emps.find({empsal:{$exists:true}}).sort({empsal:-1})
+
+    - in descending  and to check if empsal exists + limit 
+    > db.emps.find({empsal:{$exists:true}}).sort({empsal:-1}).skip(1).limit(2)
+
+
+```
+
+- find - with projection (select empid, empname from emp)
+
+```
+ > db.emps.find(
+        {empsal:{$exists:true}}, 
+        {empname:1, empsal:1, _id:0}
+    ).sort({empsal:-1}).skip(1).limit(2) 
+
+```
+- updated 
+
+```
+    // syntax 
+    > db.emps.update({condition, if you dont give condition then all records are updated}, {values to update}, {by default update will update only 1 record, if you want multiple then specify multiple true }); 
+
+
+    - to identify records which does not have city and empsal more than 10000 
+     and update city with bengaluru + multiple records 
+    
+    > db.emps.update(
+        {
+            city: {$exists:false}, 
+            empsal: {$gt:10000}
+        }, 
+        {$set:{city:'Bengaluru'}},
+        {multi:true}
+    );
+
+    > db.emps.update(
+        {
+            city: {$exists:false}, 
+            empsal: {$lte:10000}
+        }, 
+        {$set:{city:'Mumbai'}},
+        {multi:true}
+    );
+
+    - showing  multi true 
+
+
+    > db.emps.update({}, {$set:{country:'India'}}, {multi:true}); 
+
+```
+
+- upsert 
+```
+    - if the records are matching then update if not insert 
+
+    > db.emps.update({empname:'Neha'},{$set:{city:'Mysuru'}},{upsert:true}); 
+
+```
+- insert int better way 
+```
+    - use save - when _id not matching then it inserts, when matching it updates 
+
+    - db.emps.save({"_id" : ObjectId("65e94bf13d857dfa53c4389f"), empid:110, empname:'Mohit', city:'Delhi'})
+```
+- delete 
+```
+    > db.emps.remove({empid:110}); 
+
+```
+
+- working with embeded document
+
+```
+   > db.embedrec.save({
+    id: 101, 
+    name: {
+        first:"Gaurav", 
+        last:"Kumar"
+    }, 
+    address: {
+        houseNo: 1243, 
+        street: "some Blvd" , 
+        city: "Mysuru", 
+        state: "Karnataka"
+    }
+    });
+
+    > db.embedrec.find({id:{$eq:101}})
+
+    > db.embedrec.find({'name.first':{$eq:'Gaurav'}})
+
+```
+
+- creating indexes - 
+```
+    > db.emps.find({empname:'siddharth'}).explain('executionStats');
+
+    - db.emps.createIndex({empname:1})
+    - db.emps.createIndex({empname:-1, city:1})
+
+```
+
+- to analyse the query + amount of time taken for execution (before and after index )
+ 
+
+
+
+
