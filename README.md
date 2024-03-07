@@ -511,5 +511,10 @@ pipeline {
  
 
 
+## for CPS 
+
+- Sequence Diagram 
+- Usecase Diagram 
+- setup java project, create necessary packages, exception, beans, etc 
 
 

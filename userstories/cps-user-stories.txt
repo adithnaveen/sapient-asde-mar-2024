@@ -1,0 +1,295 @@
+
+Insurance - CPS User stories 
+---------------
+
+
+
+User Stroy : customer registration 
+--------------------------------------
+AC : new customer registration 
+Given the application is running on the cli mode 
+When the application shows the options 
+    1. Register new user 
+    2. login to the system 
+    3. Admin Login 
+    4. Employee Login 
+    5. Exit 
+When the user selects option 1 
+Then accept email, password, confirm password, dob, city state, etc 
+When the details are validate like password should have 1 special char 
+And email should have @ symbol 
+And dob should be 18 years or old 
+And city should be in india 
+Then store the record in database 
+And show message "Your registration successful"  
+
+Assume : Customer is given 10,000 when he registers 
+
+
+
+
+User Stroy : Customer Login 
+--------------------------------------
+AC1:  Customer Login (Valid Case)
+Given the application is loaded on cli mode 
+When the customer gives email as user name and password 
+Then the system shall validate the credentials 
+When the credentials are valid 
+Then the user is taken to home menu options
+And a message saying "Welcoime Customer <Customer Name> " 
+
+AC2:  Customer Login (Invalid Case)
+Given the application is loaded on cli mode 
+When the customer gives email as user name and password 
+Then the system shall validate the credentials 
+When the credentials are invalid 
+Then the error message is shown "Sorry invalid  credentials"
+And the application shows the options 
+    1. Register new user 
+    2. login to the system 
+    3. exit 
+
+
+
+User Stroy : Apply for Insurance 
+--------------------------------------
+AC1: Customer buys an insurance (valid case )
+
+Given the application is loaded on cli mode 
+When the customer gives valid credentials and logs in 
+Then there shall be options like 
+        1. View Available insurance 
+        2. View Enrolled Insurance
+        3. Update Profile 
+        4. Exit 
+When customer select option 1 (view Available insurance)
+Then the list of insurance which are Available with the company to be shown 
+    Ex: Insurance ID - Insurance Name - Benefits (short summary)
+When user selects the insurance ID 
+Then the customer is asked for the confirmation "Are you sure do you want to apply for the insurance" 
+When customer selects "Yes" 
+Then the insurance is bought in the name of customer 
+
+
+
+
+AC2: Customer buys an insurance (invalid case - Insurance ID)
+
+Given the application is loaded on cli mode 
+When the customer gives valid credentials and logs in 
+Then there shall be options like 
+        1. View Available insurance 
+        2. View Enrolled Insurance
+        3. Update Profile 
+        4. Exit 
+When customer select option 1 (view Available insurance)
+Then the list of insurance which are Available with the company to be shown 
+    Ex: Insurance ID - Insurance Name - Benefits (short summary)
+When user selects the insurance ID which is not in the list 
+Then system shall show a message sorry invalid Insurance ID 
+And there shall be options like 
+        1. View Available insurance 
+        2. View Enrolled Insurance
+        3. Update Profile 
+        4. Exit 
+
+
+
+
+AC3: Customer buys an insurance (invalid case - Insurance ID)
+
+Given the application is loaded on cli mode 
+When the customer gives valid credentials and logs in 
+Then there shall be options like 
+        1. View Available insurance 
+        2. View Enrolled Insurance
+        3. Update Profile 
+        4. Exit 
+When customer select option 1 (view Available insurance)
+Then the list of insurance which are Available with the company to be shown 
+    Ex: Insurance ID - Insurance Name - Benefits (short summary)
+When user selects the insurance ID 
+Then the customer is asked for the confirmation "Are you sure do you want to apply for the insurance" 
+When customer selects "No" 
+Then the message to be shown "Sorry insurance not bought" 
+
+
+
+
+User Stroy : Pay insurance premium 
+--------------------------------------
+AC1 : pay insurance valid case 
+Given the application is loaded successful in cli mode 
+When customer login successfully 
+Then options shown 
+       1. View Available insurance 
+        2. View Enrolled Insurance
+        3. Update Profile 
+        4. Exit 
+When customer select option 2 
+Then the list of insurances which the customer has bought to be shown 
+    Ex: 101 - Child Care - for education 
+        102 - Pension plan - for old age 
+
+When customer selects available insurance from the list 
+Then details of the insurance to be shown 
+And there shall be an option "Pay premium"
+When selected the option of "pay premium"
+Then the system shall show the amount assoiciated with the insurance 
+And there shall be an confirmation message "Are you sure to pay insurance amount of xxxx " 
+When customer types "Y" 
+Then the premium to be paid 
+And successful message to be shown "thank you for paying Insurance amount of xxxxxx" 
+
+
+User Stroy : Customer Update Profile 
+--------------------------------------
+AC1 : customer update profile valid case 
+Given the application is loaded successful in cli mode 
+When customer login successfully 
+Then options shown 
+       1. View Available insurance 
+        2. View Enrolled Insurance
+        3. Update Profile 
+        4. Exit 
+When the customer selects option 3 Update Profile
+Then the application shall allow few fields of the customer to update like phone number, address 
+When new fields are given 
+And validate 
+Then the message to be shown "your profile is updated"
+
+
+
+
+
+User Stroy : Admin Login 
+--------------------------------------
+AC1 : Admin Login valid case 
+Given the application is running on the cli mode 
+When the application shows the options 
+    1. Register new user 
+    2. login to the system 
+    3. Admin Login 
+    4. Employee Login 
+    5. Exit 
+When user selects option 3 
+Then the application shall ask for username and password
+When the credentials are validated
+Then the application shall show menu options 
+    1. Create Employee 
+    2. Disable Employee 
+    3. Create Insurance 
+    4. Exit 
+
+
+
+
+User Stroy : Admin Create Insurance 
+--------------------------------------
+AC : Create insurance valid case 
+
+Given the application is running on the cli mode 
+When admin logs in successfully 
+Then options shown are  
+    1. Create Employee 
+    2. Disable Employee 
+    3. Create Insurance 
+    4. Exit 
+When admin selects option 3 Create Insurance
+Then the application shall take the needed information like 
+    insurance code / ID, title, short description, details, tenure, type of insurance, Benefits etc 
+When entered details 
+Then the message to be shown "Thank you insurance created successfully" 
+
+
+
+
+
+
+User Stroy : Create Employee 
+--------------------------------------
+AC create employee valid case 
+
+Given the application is running on the cli mode 
+When admin logs in successfully 
+Then options shown are  
+    1. Create Employee 
+    2. Disable Employee 
+    3. Create Insurance 
+    4. Exit 
+When admin selects option 1 Create Employee
+Then the application shall ask for 
+    employee id, empname name, emp-login-id, employee initial password 
+When  the details are issued 
+Then the application shall show an message "Employee created successfully"
+
+
+
+
+User Stroy : Disable Employee 
+--------------------------------------
+AC create employee valid case 
+
+Given the application is running on the cli mode 
+When admin logs in successfully 
+Then options shown are  
+    1. Create Employee 
+    2. Disable Employee 
+    3. Create Insurance 
+    4. Exit 
+When admin selects option 2 Disable Employee
+Then the application shall take the Employee ID 
+When the employee id is validated 
+Then the employee is disabled 
+And shall not be allowed to login 
+
+
+
+User Stroy : Employee Login 
+--------------------------------------
+AC1 : Employee loing enabled 
+
+Given the application is running on the cli mode 
+When the application shows the options 
+    1. Register new user 
+    2. login to the system 
+    3. Admin Login 
+    4. Employee Login 
+    5. Exit 
+When the user selects option 4
+Then accept credentials like username and password 
+When credentials are validated and employeed is enabled 
+Then successful message to be shown "Login successful" 
+And option to be shown 
+    1. view policy 
+    2. update policy 
+    3. Exit 
+
+
+
+AC2 : Employee loing disabled
+
+Given the application is running on the cli mode 
+When the application shows the options 
+    1. Register new user 
+    2. login to the system 
+    3. Admin Login 
+    4. Employee Login 
+    5. Exit 
+When the user selects option 4
+Then accept credentials like username and password 
+When credentials are validated
+And its valid 
+And the employee is diabled 
+Then message to be shown "sorry please connect with admin for the activation" 
+
+
+
+User Stroy : Employee policy view 
+--------------------------------------
+
+
+User Stroy : Employee updated policy 
+--------------------------------------
+
+
