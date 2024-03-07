@@ -363,7 +363,6 @@ Then policy shall be hand over and message to be displayed "Policy will be close
 
 
 
-Pod1 : 
 
 1. customer registration  
 2. Customer Login  
