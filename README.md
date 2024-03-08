@@ -531,8 +531,6 @@ pipeline {
 
 # Day 4 
 
-- how our input shall happen in application 
-- 
 
 ## GIT 
 
@@ -576,4 +574,124 @@ pipeline {
     - write your code for 85 mins 
     - git push mohit-6543
 
+
+<br>
+
+
+- Highly Cohesive -Loosely Coupled Systems
+        - Oauth services 
+    - DRY  - Do Not Repeat Yourself 
+    - WORM - Write Once Read Many 
+
+
+    ```
+        public Customer insertCustomer(Customer customer) {
+            // this shall insert the record to database 
+        }
+
+
+        public Admin insertAdmin(Admin admin) {
+            // this shall insert the record to database 
+        }
+
+
+        public Employee insertEmployee(Employee employee) {
+            // this shall insert the record to database 
+        }
+
+
+        // beans 
+
+        class Customer {
+            private int custId; 
+            private Name name; 
+            private Address address; 
+            private List<String> dependencies; 
+            ... 
+        }
+
+
+        class Admin {
+            private int adminId; 
+            private Name name; 
+            private Address address; 
+            private double salary; 
+            private String role; 
+            private String branchName; 
+
+        }
+
+        class Employee {
+            private int empId; 
+            private Name name; 
+            private Address address; 
+            private double salary; 
+
+        }
+
+
+        class Name {
+            private String firstName; 
+            private String middleName; 
+            private String lastName; 
+        }
+
+        class Address {
+              private String houseNo; 
+            private String street; 
+            private String city; 
+            private String country; 
+        }
+    ```
+
+
+    - YAGNI 
+    - SOLID 
+- Generics 
+
+```
+
+    - child insurance 
+    - old age insurance 
+    - travel insurance 
+    - car insurance....  
+
+    class Insurance {
+        private int insuranceId; 
+        private String insurance; 
+
+
+        public Insruance(int insuranceId, String insuracne) {
+            this.insuranceId = insuranceId;
+            this.insurance = insurance; 
+        }
+
+
+        // business logic 
+
+        public void claim() {
+                if(insrarnce.equals("car")) {
+                    // make the business logic for insuracn e of car... 
+                }else if(insrarnce.equals("travel")) {
+                     // make the business logic for insuracn e of travel... 
+                }
+
+        }
+
+    }
+
+    class Insurance <T> {
+        private int insuranceId; 
+        private T insurance; 
+    }
+
+
+```
+
+- Collections 
+- List, Set, Map
+- how our input shall happen in application 
+
+
+ 
  
