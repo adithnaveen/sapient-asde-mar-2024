@@ -525,3 +525,55 @@ pipeline {
 - setup java project, create necessary packages, exception, beans, etc 
 
 
+
+
+
+
+# Day 4 
+
+- how our input shall happen in application 
+- 
+
+## GIT 
+
+- SVN - Subversion 
+- CVS - Mercury 
+- VSS Code - Microsoft 
+.... 
+- Git 
+    - who we are 
+        1. local - folder level 
+        2. global - user level  -
+```
+            2.1  git config --global user.name "Naveen Kumar"
+            2.2  git config --global user.email "naveen.kumar@publicissapient.com"
+
+
+            2.3  git config --system user.name "Naveen Kumar" + user email 
+            2.4  git config --local user.name "Naveen Kumar"
+
+
+```            
+        3. system - system level 
+
+>  git log --graph --decorate --oneline 
+
+
+### Branching Stratergy 
+
+- Mono Repo 
+    - single branch 
+    - every body shall contribute 
+    - folders 
+- Branching Stragergy 
+    - CPS 
+    
+- Assessment 
+    - git clone https://tools.publicis.sapient.com/bitbucket/scm/psifab/assessment-week-1.git
+    - in this branch there shall be a filed called dummy.txt
+    - git branch mohit-6543
+    - git checkout mohit-6543 -> switchecd to the branch 
+    - write your code for 85 mins 
+    - git push mohit-6543
+
+ 
