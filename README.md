@@ -630,3 +630,56 @@ pipeline {
 
  
  
+
+ # day 5 
+
+ ```
+    Employee{empId=101, empName='sifat', empSal=11223.0}, 115
+    Employee{empId=101, empName='sifat', empSal=11223.0}, 115
+    Employee{empId=102, empName='Neha', empSal=22113.0}, 78
+
+
+    --- 
+
+
+    Employee{empId=101, empName='sifat', empSal=11223.0}, 115
+    Employee{empId=102, empName='Neha', empSal=22113.0}, 78
+ ```
+
+
+ - working with properties 
+
+ ```
+    db.properties 
+    uname=naveen
+    password=guessme 
+    url=192.22.34.41
+ ```
+## work around 
+
+1. complete program with tree map 
+2. create a program which shall take the data from db.properties file 
+
+## working with mysql 
+
+>  mysql -u root -p
+
+> create database sapientdb; 
+
+> use sapientdb; 
+
+> create table which is needed 
+
+```
+    create table employee(
+        empid int primary key, 
+        empname varchar(30) not null, 
+        empsal decimal (10,2)
+    ); 
+
+    
+
+```
+- com.mysql.cj.jdbc.Driver
+
+
