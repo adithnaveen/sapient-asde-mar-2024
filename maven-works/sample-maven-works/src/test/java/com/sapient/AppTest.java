@@ -20,8 +20,13 @@ public class AppTest {
     @Test
     public void testingForName() {
         String expectedName = "Harish";
-        String actualName = "harish";
+        String actualName = "Harish";
 
         assertEquals(expectedName, actualName);
     }
+
+    public void testAdd() {
+        assertEquals(30, App.addNumber(10, 20));
+    }
+
 }
