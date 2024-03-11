@@ -1,5 +1,6 @@
 package com.sapient.beans;
 
+// this is bean class 
 public class Employee {
 
     private int empId;
