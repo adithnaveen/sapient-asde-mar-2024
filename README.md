@@ -683,3 +683,97 @@ pipeline {
 - com.mysql.cj.jdbc.Driver
 
 
+
+
+
+# Day 6 
+
+##  working with Java 8 
+
+
+```
+
+    interface Comparator<t1, t2> {
+        compare(T o1, T o2); 
+    }
+
+    class EmployeeSortingTemplate  {
+        public List<Employee> sortEmployeeBasedOnName (List<Employee> employees) {
+
+           Comparator<Employee> sortBasedOnName =  new Comparator() <Employee> {
+                public int compare(Employee e1, Employee e2 ) {
+                    return e1.getEmpName().equals(e2.getEmpName()); 
+                }
+
+            }
+            return sortBasedOnName; 
+        }
+    }
+
+
+    class EmployeeSortingTemplate  {
+        public List<Employee> sortEmployeeBasedOnName (List<Employee> employees) {
+
+           Comparator<Employee> sortBasedOnName =   ( e1,  e2 )  -> e1.getEmpName().equals(e2.getEmpName()); 
+                
+
+        }
+    }
+
+
+    Integer value = new Supplier<Integer>{
+        public Integer get() {
+            return 123; 
+        }
+    }
+
+    
+
+
+    Integer value = () -> 123; 
+
+
+
+```
+
+
+-- predicate cod e
+
+``` 
+    @FunctionalInterface
+    interface Predicate<T>  {
+        public boolean test(T t); 
+
+        public default  Predicate <T> and (Predicate T t); 
+
+            ... 
+
+            static <T> Predicate<T>	isEqual(Object targetRef);
+    }
+
+
+    // you impl code 
+    Predicate mypredicate= ... 
+    Predicate.isEqual(mypredicate); 
+
+    class Employee {
+        private int empId; 
+        private String empName; 
+        private String lcation; 
+        private double salary; 
+    }
+
+
+    Comparator<Employee> sortNameAscendingOrder = (e1, e2) -> e1.getEmpName().comparare(e2.getEmpName()); 
+    Comparator<Employee> sortNameDescendingOrder = (e1, e2) -> e2.getEmpName().comparare(e1.getEmpName()); 
+    Comparator<Employee> sortOnLocationAscending = (e1, e2) -> e1.getLocation().comparare(e2.getLocation()); 
+
+
+    // can we have a comprator with and clause / or claouse / negate etc... 
+    
+
+
+
+
+
+```

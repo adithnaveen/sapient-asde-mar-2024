@@ -25,5 +25,8 @@ public class GetConnection {
         }
     }
 
+    public static Connection getPostgresConnection() {
+        return null; 
+    }
 
 }
