@@ -770,10 +770,11 @@ pipeline {
 
 
     // can we have a comprator with and clause / or claouse / negate etc... 
-    
-
-
-
 
 
 ```
+
+- create a predicate which shall have people with salary > 0 and coming from particular city (end use should be able give at runtime ex: Mumbai, Bengaluru etc.. )
+
+
+

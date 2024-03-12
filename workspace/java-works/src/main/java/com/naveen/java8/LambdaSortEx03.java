@@ -8,7 +8,7 @@ import java.util.List;
 public class LambdaSortEx03 {
     public static void main(String[] args) {
         List<Employee> listEmployee = Arrays.asList(
-                new Employee(101, "Paras", "Delhi", 10000),
+                new Employee(101, "Paras", "Delhi", -10000),
                 new Employee(44, "Neha", "Mumbai", 10000),
                 new Employee(123, "Rajesh", "Delhi", 12000),
                 new Employee(55, "Dhananjay", "Mumbai", 20000),
