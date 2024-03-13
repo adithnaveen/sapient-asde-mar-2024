@@ -4,7 +4,7 @@
 
 ### jenkins global variables - https://www.jenkins.io/doc/book/pipeline/jenkinsfile/#using-environment-variables
 
-### Java 11 - gist  - https://gist.github.com/adithnaveen/0ffef831ee318deb7d09c5ff2f
+### Java 11 - gist  - https://gist.github.com/adithnaveen/0ffef831ee318deb7d09c5ff2f5229f9
 
 
 ### Java 11 new features - https://dzone.com/articles/90-new-features-and-apis-in-jdk-11
