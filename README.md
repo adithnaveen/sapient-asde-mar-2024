@@ -787,3 +787,6 @@ pipeline {
 - encapsulation 
 - terraform ansible 
 - records 
+
+
+empName -> getEmpName(), setEmpName(); 
