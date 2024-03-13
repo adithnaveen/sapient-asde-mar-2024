@@ -778,3 +778,12 @@ pipeline {
 
 
 
+# Day 7 
+
+- http request 
+- new string classes
+- usage of var 
+- new io - NIO / NIO2 
+- encapsulation 
+- terraform ansible 
+- records 

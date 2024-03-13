@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class CollectorsEx5 {
+public class CollectorsEx02 {
 	public static void main(String[] args) {
 		List<Product> list   = Arrays.asList(
 				new Product("laptop", 33, new BigDecimal("65000.00")),
