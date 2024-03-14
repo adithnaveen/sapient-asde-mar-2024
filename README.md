@@ -790,3 +790,42 @@ pipeline {
 
 
 empName -> getEmpName(), setEmpName(); 
+
+
+# Day 8 
+
+- test with assertAll ();
+- to insert customer record - 
+    101, Kumar, 1234.... 
+    102, Kumar2, 1234.... 
+    103, Kumar3, 1234.... 
+    104, Kumar4, 1234.... 
+
+- @parameterized 
+
+```
+    mvn clean verify sonar:sonar \
+  -Dsonar.projectKey=java-works \
+  -Dsonar.projectName='java-works' \
+  -Dsonar.host.url=http://localhost:9000 \
+  -Dsonar.token=sqp_90a7594a21e4926b3ee78a7628b374279e7268ea -Dmaven.test.skip=true
+```
+
+```
+    mvn sonar:sonar \
+  -Dsonar.projectKey=java-works \
+  -Dsonar.projectName='java-works' \
+  -Dsonar.host.url=http://localhost:9000 \
+  -Dsonar.token=sqp_90a7594a21e4926b3ee78a7628b374279e7268ea -Dmaven.test.skip=true
+```
+
+
+-- running jacoco report 
+```
+    $ mvn clean package org.jacoco:jacoco-maven-plugin:0.8.8:prepare-agent -Dmaven.test.skip=true
+    $ mvn  org.jacoco:jacoco-maven-plugin:0.8.8:report -Dmaven.test.skip=true
+```
+
+
+
+
