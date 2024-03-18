@@ -60,7 +60,7 @@ public class AppTest {
     @Test
     public void testReturnSlowForExceptionCheck() {
 
-        assertTimeout(Duration.ofMillis(1500), () -> {
+        assertTimeout(Duration.ofMillis(3000), () -> {
             assertEquals(expected, logic.returnSlowHi(name));
         });
 

@@ -822,10 +822,255 @@ empName -> getEmpName(), setEmpName();
 
 -- running jacoco report 
 ```
-    $ mvn clean package org.jacoco:jacoco-maven-plugin:0.8.8:prepare-agent -Dmaven.test.skip=true
+    $ mvn clean package install org.jacoco:jacoco-maven-plugin:0.8.8:prepare-agent -Dmaven.test.skip=true
     $ mvn  org.jacoco:jacoco-maven-plugin:0.8.8:report -Dmaven.test.skip=true
 ```
 
 
 
 
+
+
+# Day 9 
+
+- terraform ansible 
+
+
+- solid principles 
+
+
+```
+
+    public interface IDataBase {
+        connection(String userName, String password, String url); 
+        connection(Properties prop); 
+    }
+
+    // adaptor class 
+    class abstract DataBase implements IDataBase {
+        connection(String userName, String password, String url) {}
+        connection(Properties prop) {}
+    }
+
+    class MySQLConnection extends DataBase {
+
+            //
+
+    }
+
+    class MongoDBConnection extends DataBase {
+
+            //
+
+    }
+    enum DataBaseNames {MONGODB, MYSQL, POSTREGS}
+    class GetMyDataBaseConnection {
+        <!-- if you dont have default construcgtor then jvm will give you public default constructor  -->
+
+        private GetMyDataBaseConnection() {}
+
+        public static DataBase dataBase (DataBaseNames name) {
+            if(name.equals(DatbaseName.MONGODB)) {
+                return new MondobDBConnection();
+            }else if(name.equals(DatabaseName.MYSQL)) {
+                return new MySQLConnection; 
+            }
+            return null; 
+        }
+    }
+
+
+        <!-- new GetMyDataBaseConnection() ; (wrong ) -->
+            Database db = GetMyDataBaseConnection(DataBaseNames.MONGODB);
+
+
+    public class GetConnection  {
+
+        public Connection mySqlConnection() {
+
+        }
+
+        public Connection postgresConnection() {
+            
+        }
+
+
+        public Connection mongoDBConnection() {
+            
+        }
+    }
+
+
+
+    display (int userId, PersonalDetails pd  Address address, Family members  Date dob, .... .... . .)
+
+
+    String houseNo, String street, String city, String state, String country,
+
+
+    - liskov principle 
+
+    class Account {
+
+        public void withdraw(Account account) {
+            if(account.instanceOf(FixedTermDepositAccount.class)) {
+                throw new WithDrawalNotAllowedException("sorry not allowed"); 
+            }
+        }
+    }
+
+
+```
+
+
+```
+    If for each object o1 of type S there is an object o2 of type T such that for all programs P defined in terms of T, the behavior of P is unchanged when o1 is substituted for o2 then S is a subtype of T.
+
+
+```
+
+```
+    - D - Dependency Injection 
+
+
+    - mobile 
+        - id 
+        - camera 
+            - lens 
+                - micro lens 
+                - macro 
+                - ultra wide.. 
+            - mp's 
+            - flash 
+            - zoom 
+            - ai enabled 
+            - hd 
+        - display 
+        - battery 
+        - processor 
+        - ram
+        - body 
+        - cover 
+
+
+
+    application.xml 
+
+    <project>
+        <beans>
+            <bean id="mobile" class ="com.naveen.Mobile">
+                <property name="id" value="samsung camera">
+                <property name="lens" ref="lens">
+            </bean>
+
+            <bean id="lens" class="com.naveen.Lens">
+                <property name="lensType" value="micro">
+                <property name="lensSize" value="4">
+            </bean>
+
+        </beans>
+    </project>
+
+    ApplicationContext context = Spring.applicationContextGetBean("mobile"); 
+
+
+```
+
+
+
+
+# Day 10 
+
+```
+enum CAR {
+    MARUTI, HYUNDAI, TOYOTA
+}
+    class abstract  Car {
+        private Car() {
+            System.out.println("hi car is getting created.. "); 
+        }
+
+        public static Car getCar(CAR carName ) {
+
+            if(carName.equals(CAR.MARUTI)) {
+                return new Maruti(); 
+            }else if (carName.equals(CAR.TOYOTA)) {
+                return new Toyota(); 
+            }else if (carName.equals(CAR.HYUNDAI)) {
+                return new Hyundai(); 
+            }
+
+            return null; 
+        }
+
+        public abstract  void drive(); 
+
+    }
+
+    class Hyundai extends Car {
+        public Hyundai () {
+            
+        }
+        public void drive() {
+
+            hyundai Driving 
+        }
+    }
+
+    class Toyota extends Car {
+        public Toyota {
+
+        } 
+
+        public void drive() {
+
+            toyota driving 
+        }
+    }
+
+    class Maruti extends Car  {
+        public Maruti() {}
+        public void drive() {
+            maruti driving 
+        }
+    }
+
+
+
+
+
+
+    // you cannot access 
+    Car c = Car.getCar(CAR.HYUNDAI);  
+
+    
+```
+
+
+- old way of creating spring beans 
+
+>     BeanFactory factory = new ClassPathXmlApplicationContext("bean-factory-demo.xml"); 
+
+>     BeanFactory factory = new ClassPathXmlApplicationContext("bean-factory-demo.xml", "another.xml", "another1.xml"); 
+
+
+
+```
+jdbcInsurance instantiated...
+Dummy Insurance Instantiated...
+number of insurance(dummy) : 0
+Dummy Insurance Instantiated...
+number of insurance(dummy)(2) : 0
+number of insurance(jdbc) : 100
+
+
+------------------------------------------------
+
+
+Dummy Insurance Instantiated...
+number of insurance(dummy) : 0
+Dummy Insurance Instantiated...
+number of insurance(dummy)(2) : 0
+jdbcInsurance instantiated...
+number of insurance(jdbc) : 100
+```
