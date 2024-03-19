@@ -1074,3 +1074,39 @@ number of insurance(dummy)(2) : 0
 jdbcInsurance instantiated...
 number of insurance(jdbc) : 100
 ```
+
+
+# Day 11 
+
+- Web Server 
+    - Tomcat 
+    - Jetty 
+    - Netty 
+    - Weblogic, web sphere, glassfish, jbosss 
+
+
+
+```
+    <form>
+        Enter Name <input type="text" name ="name">
+        <input type="submit">
+    </form>
+```
+
+```
+    https://www.msn.com/en-in/news/India/actor-arundhathi-nair-on-ventilator-after-road-accident-says-sister-arathy-she-is-fighting-for-her-life/ar-BB1k5G2E?ocid=hpmsn&cvid=c75bdf8ca96244fabb5fa630a94a08ef&ei=15
+```
+
+
+```
+    document.getElementById("myid").innerHTML = "something";  - html, css
+```
+
+
+```
+> mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-webapp -DarchetypeArtifactId=maven-archetype-webapp
+
+```
+
+> http://localhost:8080/index.html
+> http://localhost:8080/hi

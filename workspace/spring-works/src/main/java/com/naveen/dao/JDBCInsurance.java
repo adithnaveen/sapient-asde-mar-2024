@@ -1,5 +1,6 @@
 package com.naveen.dao;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
@@ -7,12 +8,15 @@ import org.springframework.stereotype.Component;
 @Component
 public class JDBCInsurance implements  IInsuranceDAO{
 
+    @Autowired
+    SomeService ss;
     public JDBCInsurance() {
         System.out.println("jdbcInsurance instantiated...");
     }
 
     @Override
     public int count() {
+        ss.service();
         return 100;
     }
 
