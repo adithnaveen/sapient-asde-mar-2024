@@ -1116,4 +1116,22 @@ number of insurance(jdbc) : 100
 
  - working with JSP 
 
- 
+
+ ```
+ <servlet>
+    <servlet-name>Hello</servlet-name>
+    <servlet-class>org.spring....DispatcherServlet</servlet-class>
+    </servlet>
+
+    <serlvet-mapping>
+        <servlet-name>Hello</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
+ ```
+ > http://localhost:8080/context-name/hello
+
+ - what should happen if i want to insert a product with spring mvc 
+    - you need a form (WEB-INF) - which we cannot access 
+    - index.html - link add product form 
+    - this shall show me 
+        http://localhost:application-name/add-product -> product-form(/WEB-INF/pages/product-form.html) file which will be present in pages/add-product.html
