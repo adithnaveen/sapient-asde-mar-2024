@@ -10,6 +10,11 @@ public class JDBCInsurance implements  IInsuranceDAO{
 
     @Autowired
     SomeService ss;
+    /*
+        SomeServie ss = new SomeService();
+        ss.setxxx ();
+        // and keep in it spring container
+     */
     public JDBCInsurance() {
         System.out.println("jdbcInsurance instantiated...");
     }

@@ -1110,3 +1110,10 @@ number of insurance(jdbc) : 100
 
 > http://localhost:8080/index.html
 > http://localhost:8080/hi
+
+
+# Day 12 
+
+ - working with JSP 
+
+ 
