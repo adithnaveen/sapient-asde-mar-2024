@@ -28,5 +28,48 @@ GET http://localhost:9090/hi/naveen HTTP/1.1
 
 ###
 
-GET http://localhost:8765/micro-service1/hi/naveen HTTP/1.1
+GET http://localhost:8765/MICRO-SERVICE1/
+
+###
+ 
+
+GET http://localhost:8765/micro-service1
+
+
+
+
+
+
+
+
+
+###
+GET http://localhost:9050/api/ HTTP/1.1
+
+
+### 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

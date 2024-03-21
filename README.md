@@ -1135,3 +1135,104 @@ number of insurance(jdbc) : 100
     - index.html - link add product form 
     - this shall show me 
         http://localhost:application-name/add-product -> product-form(/WEB-INF/pages/product-form.html) file which will be present in pages/add-product.html
+
+
+
+# Day 13 
+
+@???? 
+class Employee {
+    
+}
+- Employee e =  new Employee(); 
+
+
+```
+    create table employee(
+        empid int primary key, 
+        empname varchar(30)
+    )
+
+    create table employee(
+        empid number(10) primary key, 
+        empname varchar2(30)
+    )
+
+    
+```
+
+
+- constraints for Restful services 
+
+```
+    <employees>
+        <employee>
+            <empid>101</empid>
+            <name>
+                <first>Siddharth</first>
+                <last>Malhotra</last>
+            <name>
+            <address>
+                <hno>123</hno>
+                <pin>12345</pin>
+            </address>
+        </employee>
+         <employee>
+            <empid>102</empid>
+            <name>
+                <first>Siddharth</first>
+                <last>Malhotra</last>
+            <name>
+            <address>
+                <hno>123</hno>
+                <street>Mararthalli Main Road </street>
+                <pin>12345</pin>
+            </address>
+        </employee>
+    </employees>
+
+    {
+        [
+            {
+                empid:101, 
+                name:{
+                    first:"Siddharth", 
+                    last:"malhotra"
+                }, 
+                address: {
+                    hno:123, 
+                    pin:12345
+                }, 
+                family: {
+                    father:"Name", 
+                    mother:"Name"
+                }
+            }, 
+             {
+                empid:101, 
+                name:{
+                    first:"Siddharth", 
+                    last:"malhotra"
+                }, 
+                address: {
+                    hno:123, 
+                    pin:12345, 
+                    street:Mararthalli Main Road
+                }
+            }
+        ]
+    }
+```
+
+
+```
+     name:{
+            first:"Siddharth", 
+            last:"malhotra"
+        }
+
+        C - POST http://localhost:8080/myapplication-name/
+        R - GET http://localhost:8080/myapplication-name/
+        U - PUT/PATCH http://localhost:8080/myapplication-name/
+        D - DELETE http://localhost:8080/myapplication-name/ 
+```
