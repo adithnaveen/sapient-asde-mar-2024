@@ -49,9 +49,26 @@ GET http://localhost:9050/api/ HTTP/1.1
 
 ### 
 
+POST http://localhost:9050/api/employee HTTP/1.1
+Content-Type: application/json
+
+{
+	"empId" : 103,
+	"empName" : "Harsh",
+	"empSalary" : 3322,
+	"empEmail" : "harsh@harsh.com"
+}
+
+
+###
+
+GET http://localhost:9050/api/employee HTTP/1.1
 
 
 
+###
+
+GET http://localhost:9050/api/employee/101 HTTP/1.1
 
 
 

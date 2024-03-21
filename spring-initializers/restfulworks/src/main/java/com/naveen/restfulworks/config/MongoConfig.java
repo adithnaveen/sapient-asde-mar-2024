@@ -14,9 +14,11 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 @EnableMongoRepositories(basePackageClasses = EmployeeRepo.class)
 public class MongoConfig {
 
-    @Bean
+//    @Bean
     public CommandLineRunner commandLineRunner(EmployeeRepo repo) {
        return args ->  repo.insert(new Employee(101, "Naveen",
                 1234, "naveen@naveen.com"));
+
+//        return null;
     }
 }

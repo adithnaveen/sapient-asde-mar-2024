@@ -1236,3 +1236,6 @@ class Employee {
         U - PUT/PATCH http://localhost:8080/myapplication-name/
         D - DELETE http://localhost:8080/myapplication-name/ 
 ```
+
+
+2024-03-21T14:36:44.263+05:30  WARN 70270 --- [restfulworks] [nio-9050-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; For input string: "65fbda1130b00e036362813d"]
