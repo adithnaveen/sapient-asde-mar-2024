@@ -1239,3 +1239,28 @@ class Employee {
 
 
 2024-03-21T14:36:44.263+05:30  WARN 70270 --- [restfulworks] [nio-9050-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; For input string: "65fbda1130b00e036362813d"]
+
+
+
+# Day 14 
+
+
+1. Micro Services - 9000 to 9999
+    1.1 Customer Service 9011 to 9020 
+    1.2 Admin service 9021 to 9030 
+    .... 
+2. database mongodb 27017, mysql 3306 
+3. Eureka - 8761 
+4. Gateway - 8765 
+5. application buildig front end 8080 
+
+
+
+```
+RestTemplate restTemplate = new RestTemplate();
+String fooResourceUrl
+  = "http://localhost:8080/spring-rest/foos";
+ResponseEntity<String> response
+  = restTemplate.getForEntity(fooResourceUrl + "/1", String.class);
+Assertions.assertEquals(response.getStatusCode(), HttpStatus.OK);
+```
